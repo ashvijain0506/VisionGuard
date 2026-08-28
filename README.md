@@ -2,40 +2,65 @@
 
 ## Deep Learning Visual Defect Detection
 
-VisionGuard is a computer vision project that uses deep learning to identify visual defects in images.
+VisionGuard is a computer vision project that uses deep learning and explainable AI to identify and classify visual defects in industrial components.
 
-The project explores whether a neural network can distinguish between normal and defective objects and uses explainable AI techniques to visualize which regions of an image influenced the model's prediction.
+### Current Focus: Cable Inspection
+
+The first model focuses on the **cable** category from the MVTec AD dataset. Rather than only predicting normal vs. defective, VisionGuard is being developed to recognize the specific defect class present in an image.
+
+## Pipeline
+
+```text
+Cable Image
+    ↓
+Preprocessing & Augmentation
+    ↓
+CNN Feature Learning
+    ↓
+Defect Classification
+    ↓
+Prediction + Confidence
+    ↓
+Explainable AI (SHAP)
+```
 
 ## Project Goals
 
-- Train an image classification model
-- Evaluate its performance on unseen images
-- Compare different modeling approaches
-- Use explainable AI to understand model predictions
+- Explore and preprocess industrial inspection images
+- Build a CNN baseline for cable defect classification
+- Evaluate predictions on unseen test images
+- Compare learned visual features with Random Forest and XGBoost classifiers
+- Use SHAP to investigate model predictions
 - Build a simple interactive demonstration
 
-## Technology
+## Repository Structure
 
-- Python
-- PyTorch
-- NumPy
-- Pandas
-- scikit-learn
-- Matplotlib
-- Streamlit
+```text
+VisionGuard/
+├── data/
+│   └── README.md
+├── models/
+│   └── README.md
+├── notebooks/
+│   └── README.md
+├── src/
+│   ├── dataset.py
+│   ├── explore_cable.py
+│   ├── explore_dataset.py
+│   ├── transforms.py
+│   └── README.md
+├── requirements.txt
+└── README.md
+```
 
-## Project Status
+## Status
 
-🚧 In development
+🚧 In development — dataset exploration and preprocessing are complete; model training is next.
 
 ## Dataset
 
-To be added.
+VisionGuard uses the MVTec Anomaly Detection (MVTec AD) dataset. The dataset itself is not stored in this repository.
 
-## Results
+## Technologies
 
-To be added.
-
-## Demo
-
-To be added.
+Python · PyTorch · scikit-learn · XGBoost · SHAP · Streamlit
